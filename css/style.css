@@ -315,7 +315,12 @@ ol {
   Header
 -----------------------*/
 
+.row {
+	align-items: center;
+}
+
 .header {
+	padding: 20px;
 	background: #ffffff;
 }
 
@@ -403,12 +408,12 @@ ol {
 	cursor: pointer;
 }
 
-.header__logo {
-	padding: 30px 0;
-}
-
 .header__logo a {
 	display: inline-block;
+}
+
+.header__logo a img {
+	height: 50px
 }
 
 .header__menu {
@@ -515,11 +520,10 @@ ol {
 }
 
 .header__nav__option a span {
-	color: #0d0d0d;
-	font-size: 11px;
+	color: #e53637;
+	font-size: 12px;
+	font-weight: 700;
 	position: absolute;
-	left: 5px;
-	top: 8px;
 }
 
 .header__nav__option a:last-child {
@@ -618,7 +622,7 @@ ol {
 }
 
 .hero__text p {
-	font-size: 16px;
+	/* font-size: 16px;
 	line-height: 28px;
 	margin-bottom: 35px;
 	position: relative;
@@ -626,7 +630,20 @@ ol {
 	opacity: 0;
 	-webkit-transition: all, 0.9s;
 	-o-transition: all, 0.9s;
-	transition: all, 0.9s;
+	transition: all, 0.9s; */
+		font-size: 16px;
+			line-height: 28px;
+			margin-bottom: 35px;
+			position: relative;
+			font-weight: bolder;
+			color: red;
+			-webkit-background-clip: text;
+			background-clip: text;
+			top: 100px;
+			opacity: 0;
+			-webkit-transition: all 0.9s;
+			-o-transition: all 0.9s;
+			transition: all 0.9s;
 }
 
 .hero__text .primary-btn {
@@ -643,10 +660,6 @@ ol {
 	position: relative;
 	top: 4px;
 	font-weight: 700;
-}
-
-.hero__social {
-	margin-top: 190px;
 }
 
 .hero__social a {
@@ -878,15 +891,16 @@ ol {
 }
 
 .instagram__pic__item {
-	width: 33.33%;
+	width: 30%;
 	float: left;
 	height: 261px;
+	margin-left: 4px;
+	margin-right: 4px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	background-position: center center;
 }
 
-.instagram__text {
-	padding-top: 130px;
-}
 
 .instagram__text h2 {
 	color: #111111;
@@ -895,7 +909,20 @@ ol {
 }
 
 .instagram__text p {
-	margin-bottom: 65px;
+	margin-bottom: 20px;
+	font-weight: 600;
+}
+
+.instagram__text a {
+	color: #e53637;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.instagram__text a:hover {
+	color: #e53637;
+	font-weight: 700;
+	text-decoration: underline;
 }
 
 .instagram__text h3 {
@@ -1146,6 +1173,20 @@ ol {
 .product__item__text .product__color__select label input {
 	position: absolute;
 	visibility: hidden;
+}
+
+/* product item styling for screens smaller than 460px */
+@media (max-width: 460px) {
+	.product__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.product__item__pic {
+		width: 330px;
+		height: 330px;
+	}
 }
 
 /*---------------------
@@ -1943,6 +1984,7 @@ ol {
 .footer {
 	background: #111111;
 	padding-top: 70px;
+	margin-top: 70px;
 }
 
 .footer__about {
@@ -1975,6 +2017,12 @@ ol {
 	margin-bottom: 20px;
 }
 
+.footer__widget p {
+	color: #e53637;
+	font-weight: bolder;
+}
+
+
 .footer__widget ul li {
 	line-height: 36px;
 	list-style: none;
@@ -1982,6 +2030,11 @@ ol {
 
 .footer__widget ul li a {
 	color: #b7b7b7;
+	font-size: 15px;
+}
+
+.footer__widget ul li a:hover {
+	color: red;
 	font-size: 15px;
 }
 
@@ -2051,6 +2104,45 @@ ol {
 
 .footer__copyright__text p a {
 	color: #e53637;
+}
+
+/* Footer styling for screens smaller than 460px */
+@media (max-width: 460px) {
+	.footer__about {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		/* Stack items vertically */
+		text-align: center;
+	}
+
+	/* Footer logo adjustments */
+	.footer__about .footer__logo img {
+		width: 160px;
+		height: 160px;
+	}
+
+	/* Social Links and About section alignment */
+	.footer__about,
+	.footer__widget {
+		text-align: center;
+	}
+
+	.footer__widget {
+		margin-top: 10px;
+	}
+
+	.footer__widget ul {
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		gap: 15px;
+		/* Space between social links */
+	}
+
+	.footer__widget ul li {
+		line-height: normal;
+	}
 }
 
 /*---------------------
